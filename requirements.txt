@@ -3,6 +3,4 @@ chromadb
 sentence-transformers
 transformers
 torch
-langchain-community-experimental==0.0.217
-
-
+langchain-community-experimental
