@@ -13,6 +13,14 @@ The system demonstrates a Retrieval-Augmented Generation (RAG) pipeline using:
 The chatbot retrieves relevant context from the speech and generates polite, context-aware answers.
 
 ## How to Run
+
+Clone the repository:
+
+    git clone https://github.com/sumitd-tech/AmbedkarGPT-Intern-Task.git
+    cd AmbedkarGPT-Intern-Task
+
+   ## Setup Instructions (Windows CMD)
+   
 1. Create a virtual environment:
    python -m venv venv
    
