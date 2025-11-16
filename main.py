@@ -16,11 +16,15 @@ chunks = splitter.split_documents(docs)
 
 # --- Create embeddings and vector DB ---
 emb = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
-vectordb = Chroma.from_documents(chunks, embedding=emb, persist_directory="chroma_db")
+vectordb = Chroma.from_documents(
+    chunks, 
+    embedding=emb, 
+    persist_directory="chroma_db"
+)
 vectordb.persist()
 
-# --- Use mini Ollama model to avoid GPU crash ---
-llm = Ollama(model="llama3.2:3b")  # or "llama3.2:1b" for lowest memory usage
+# --- Use mini Ollama model ---
+llm = Ollama(model="llama3.2:3b")
 
 # --- Friendly & polite prompt template ---
 prompt_template = """
@@ -52,9 +56,11 @@ qa = RetrievalQA.from_chain_type(
 
 # --- Chat loop ---
 print("AmbedkarGPT — ask anything (type 'exit' or 'quit' to stop)")
+
 while True:
     q = input("\nQuestion: ")
     if q.lower() in ("exit", "quit"):
         break
+
     result = qa.invoke({"query": q})
     print("\nAnswer:\n", result["result"])
