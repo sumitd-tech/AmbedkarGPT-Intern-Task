@@ -3,4 +3,3 @@ chromadb
 sentence-transformers
 transformers
 torch
-langchain-community-experimental
