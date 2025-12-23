@@ -1,4 +1,4 @@
-# AmbedkarGPT-Intern-Task
+# AmbedkarGPT Q&A System
 This is a simple Q&A system based on a short speech by Dr. B.R. Ambedkar. It answers questions using only the text provided.
 
 ## Project Overview
